@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
         prefs = getSharedPreferences("zooAppPrefs", MODE_PRIVATE);
 
-        tvResult = findViewById(R.id.tvResult);
     }
 
     @Override

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    cardCornerRadius="6dp"
+    cardElevation="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:textColor="@android:color/holo_orange_dark"
+            android:layout_toRightOf="@id/ivImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="30sp"
+            android:layout_toRightOf="@id/ivImage"
+            android:layout_below="@id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp" />
+
+        <TextView
+            android:text="(Heavy)"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="30sp"
+            android:layout_below="@id/tvName"
+            android:layout_toRightOf="@id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"/>
+
+        <ImageView
+            android:id="@+id/ivFiller"
+            android:layout_toRightOf="@id/ivImage"
+            android:layout_below="@id/tvWeight"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+        <ImageView
+            android:id="@+id/ivSound"
+            android:layout_toRightOf="@id/ivFiller"
+            android:layout_below="@id/tvWeight"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
