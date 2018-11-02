@@ -32,16 +32,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="1dp" />
-        <!--
-        <Button
-            android:onClick="playSound"
-            android:id="@+id/btnSound"
-            android:text="Listen"
+
+        <ImageView
+            android:id="@+id/ivFiller"
             android:layout_toRightOf="@id/ivImage"
             android:layout_below="@id/tvWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        -->
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+        <ImageView
+            android:id="@+id/ivSound"
+            android:layout_toRightOf="@id/ivFiller"
+            android:layout_below="@id/tvWeight"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

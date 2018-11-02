@@ -40,7 +40,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
 
         //set adapter on the list of animals
-        adapter = new RecyclerViewAdapter(animalList);
+        adapter = new RecyclerViewAdapter(this, animalList);
         layoutManager = new LinearLayoutManager(this);
         rvAnimalList = findViewById(R.id.rvAnimalList);
         rvAnimalList.setAdapter(adapter);

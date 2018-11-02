@@ -5,28 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The Animals Zoo"
         android:textSize="30sp" />
 
     <TextView
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         android:text="Atlanta, GA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         android:text="(555)123-4567"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         android:text="Hours: 8AM-10PM"
         android:layout_width="wrap_content"
@@ -51,14 +56,14 @@
         android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+<!--
     <Button
         android:onClick="showDB"
         android:text="Show Database"
         android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+-->
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"

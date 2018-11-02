@@ -1,7 +1,9 @@
 package com.example.consultants.week2daily4.view;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
@@ -19,9 +21,11 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
+    Context context;
     List<Animal> animalList;
 
-    public RecyclerViewAdapter(List<Animal> animalList) {
+    public RecyclerViewAdapter(Context context, List<Animal> animalList) {
+        this.context = context;
         this.animalList = animalList;
     }
 
@@ -50,11 +54,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Animal animal = animalList.get(position);
 
         viewHolder.tvName.setText((animal.getName()));
-        viewHolder.tvWeight.setText(animal.getWeight());
+        viewHolder.tvWeight.setText(animal.getWeight() + " lbs");
         Bitmap imgResult = BitmapFactory.decodeByteArray(animal.getPicture(), 0, animal.getPicture().length);
         viewHolder.ivImage.setImageBitmap(imgResult);
         viewHolder.sound = animal.getSound();
-
+        viewHolder.ivSound.setImageDrawable(context.getResources().getDrawable(R.drawable.sound));
     }
 
     @Override
@@ -80,6 +84,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private TextView tvName;
         private TextView tvWeight;
         private ImageView ivImage;
+        private ImageView ivSound;
         private int sound;
 
         ViewHolder(@NonNull View itemView) {
@@ -96,6 +101,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             tvName = itemView.findViewById(R.id.tvName);
             tvWeight = itemView.findViewById(R.id.tvWeight);
             ivImage = itemView.findViewById(R.id.ivImage);
+            ivSound = itemView.findViewById(R.id.ivSound);
         }
     }
 

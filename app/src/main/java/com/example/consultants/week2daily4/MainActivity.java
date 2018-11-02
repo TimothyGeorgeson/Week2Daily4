@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ByteArrayOutputStream streamTiger = new ByteArrayOutputStream();
         bmTiger.compress(Bitmap.CompressFormat.JPEG, 100, streamTiger);
         byte[] imgTiger = streamTiger.toByteArray();
-        animalDatabase.insertAnimal("MAMMALS", "Tiger", "220", imgTiger, R.raw.tigersound);
+        animalDatabase.insertAnimal("MAMMALS", "Tiger", "350", imgTiger, R.raw.tigersound);
 
         //Add cow to DB
         d = getResources().getDrawable(R.drawable.cow);
@@ -50,7 +50,23 @@ public class MainActivity extends AppCompatActivity {
         ByteArrayOutputStream streamCow = new ByteArrayOutputStream();
         bmCow.compress(Bitmap.CompressFormat.JPEG, 100, streamCow);
         byte[] imgCow = streamCow.toByteArray();
-        animalDatabase.insertAnimal("MAMMALS", "Cow", "345", imgCow, R.raw.cowsound);
+        animalDatabase.insertAnimal("MAMMALS", "Cow", "2000", imgCow, R.raw.cowsound);
+
+        //Add monkey to DB
+        d = getResources().getDrawable(R.drawable.monkey);
+        Bitmap bmMonkey = ((BitmapDrawable)d).getBitmap();
+        ByteArrayOutputStream streamMonkey = new ByteArrayOutputStream();
+        bmMonkey.compress(Bitmap.CompressFormat.JPEG, 100, streamMonkey);
+        byte[] imgMonkey = streamMonkey.toByteArray();
+        animalDatabase.insertAnimal("MAMMALS", "Monkey", "45", imgMonkey, R.raw.monkeysound);
+
+        //Add pig to DB
+        d = getResources().getDrawable(R.drawable.pig);
+        Bitmap bmPig = ((BitmapDrawable)d).getBitmap();
+        ByteArrayOutputStream streamPig = new ByteArrayOutputStream();
+        bmPig.compress(Bitmap.CompressFormat.JPEG, 100, streamPig);
+        byte[] imgPig = streamPig.toByteArray();
+        animalDatabase.insertAnimal("MAMMALS", "Pig", "180", imgPig, R.raw.pigsound);
 
         //Add duck to DB
         d = getResources().getDrawable(R.drawable.duck);
@@ -58,21 +74,8 @@ public class MainActivity extends AppCompatActivity {
         ByteArrayOutputStream streamDuck = new ByteArrayOutputStream();
         bmDuck.compress(Bitmap.CompressFormat.JPEG, 100, streamDuck);
         byte[] imgDuck = streamDuck.toByteArray();
-        animalDatabase.insertAnimal("BIRDS", "Duck", "10", imgDuck, R.raw.ducksound);
+        animalDatabase.insertAnimal("BIRDS", "Duck", "2", imgDuck, R.raw.ducksound);
 
     }
 
-    public void showDB(View view) {
-        String result = "";
-        AnimalDatabase animalDatabase = new AnimalDatabase(this);
-        Cursor cursor = animalDatabase.getAnimals("MAMMALS");
-        if (cursor.getCount() != 0) {
-            while (cursor.moveToNext()) {
-                Animal animal = new Animal(cursor.getString(1), cursor.getString(2),
-                        cursor.getString(3), cursor.getBlob(4), cursor.getInt(5));
-                result += cursor.getString(1) + " " + cursor.getString(2);
-            }
-            tvResult.setText(result);
-        }
-    }
 }
