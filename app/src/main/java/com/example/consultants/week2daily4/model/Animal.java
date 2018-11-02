@@ -1,6 +1,8 @@
 package com.example.consultants.week2daily4.model;
 
 public class Animal {
+
+    public static final String[] CATEGORIES = new String[]{"MAMMALS", "BIRDS", "FISH", "REPTILES"};
     String category;
     String name;
     String weight;

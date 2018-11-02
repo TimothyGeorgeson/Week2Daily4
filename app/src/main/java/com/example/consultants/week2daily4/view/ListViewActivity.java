@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.consultants.week2daily4.R;
+import com.example.consultants.week2daily4.model.Animal;
 
 public class ListViewActivity extends AppCompatActivity {
 
-    static final String[] CATEGORIES = new String[]{"MAMMALS", "BIRDS", "FISH", "REPTILES"};
     private ListView lvCategories;
 
     @Override
@@ -22,13 +22,13 @@ public class ListViewActivity extends AppCompatActivity {
         lvCategories = findViewById(R.id.lvCategories);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-                R.layout.category_view, CATEGORIES);
+                R.layout.category_view, Animal.CATEGORIES);
         lvCategories.setAdapter(arrayAdapter);
         lvCategories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), RecyclerViewActivity.class);
-                String message = CATEGORIES[position];
+                String message = Animal.CATEGORIES[position];
                 intent.putExtra("CATEGORY", message);
                 startActivity(intent);
                 }

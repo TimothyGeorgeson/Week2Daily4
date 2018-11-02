@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -47,25 +46,6 @@
         android:onClick="goToCategories"
         android:textSize="22sp"
         android:text="View Animal Catalogue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:onClick="populateDB"
-        android:text="Populate Database"
-        android:textSize="22sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-<!--
-    <Button
-        android:onClick="showDB"
-        android:text="Show Database"
-        android:textSize="22sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
--->
-    <TextView
-        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
