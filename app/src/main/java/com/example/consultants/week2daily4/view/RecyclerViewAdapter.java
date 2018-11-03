@@ -40,11 +40,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     // TODO: 11/1/2018 change layout by weight of animal
     private int getItemViewLayout(int viewType) {
-        int itemViewLayout = R.layout.item_row;
-//        if(viewType == 1)
-//            itemViewLayout = R.layout.person_item_male;
-//        else
-//            itemViewLayout = R.layout.person_item_female;
+        int itemViewLayout;
+        if(viewType == 1)
+            itemViewLayout = R.layout.item_row;
+        else
+            itemViewLayout = R.layout.item_row_heavy;
 
         return itemViewLayout;
     }
@@ -69,14 +69,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemViewType(int position) {
 
-//        int weight = Integer.parseInt(animalList.get(position).getWeight());
-//
-//        if(weight > 200)
-//            return 1;
-//        else
-//            return 2;
+        int weight = Integer.parseInt(animalList.get(position).getWeight());
 
-        return 1;
+        if(weight < 400)
+            return 1;
+        else
+            return 2;
     }
 
     class ViewHolder extends  RecyclerView.ViewHolder{
