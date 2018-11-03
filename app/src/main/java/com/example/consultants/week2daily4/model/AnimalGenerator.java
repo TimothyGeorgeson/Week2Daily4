@@ -56,5 +56,21 @@ public class AnimalGenerator {
         bmDuck.compress(Bitmap.CompressFormat.JPEG, 100, streamDuck);
         byte[] imgDuck = streamDuck.toByteArray();
         animalDatabase.insertAnimal(Animal.CATEGORIES[1], "Duck", "2", imgDuck, R.raw.ducksound);
+
+        //Add catfish to DB
+        d = context.getResources().getDrawable(R.drawable.catfish);
+        Bitmap bmCatfish = ((BitmapDrawable)d).getBitmap();
+        ByteArrayOutputStream streamCatfish = new ByteArrayOutputStream();
+        bmCatfish.compress(Bitmap.CompressFormat.JPEG, 100, streamCatfish);
+        byte[] imgCatfish = streamCatfish.toByteArray();
+        animalDatabase.insertAnimal(Animal.CATEGORIES[2], "Catfish", "30", imgCatfish, R.raw.catfishsound);
+
+        //Add alligator to DB
+        d = context.getResources().getDrawable(R.drawable.alligator);
+        Bitmap bmAlligator = ((BitmapDrawable)d).getBitmap();
+        ByteArrayOutputStream streamAlligator = new ByteArrayOutputStream();
+        bmAlligator.compress(Bitmap.CompressFormat.JPEG, 100, streamAlligator);
+        byte[] imgAlligator = streamAlligator.toByteArray();
+        animalDatabase.insertAnimal(Animal.CATEGORIES[3], "Alligator", "500", imgAlligator, R.raw.alligatorsound);
     }
 }
